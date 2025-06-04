@@ -17,8 +17,7 @@ const ROLE_ID = "1339859593320468511"; // ID of the 'Role Player' role
 app.use(session({ secret: "secret", resave: false, saveUninitialized: false }));
 
 app.get("/auth/discord", (req, res) => {
-  const url = ${DISCORD_API}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code&scope=identify%20guilds%20guilds.members.read;
-  res.redirect(url);
+  const url = `${DISCORD_API}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code&scope=identify%20guilds%20guilds.members.read`;
 });
 
 app.get("/", async (req, res) => {
